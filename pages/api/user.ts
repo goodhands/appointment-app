@@ -15,10 +15,10 @@ export default async function handler(
   try {
     await connect();
     let {
-      firstname = "Lapper",
-      lastname = "Woker",
-      email = "work@gmail.com",
-      password = "password",
+      firstname,
+      lastname,
+      email,
+      password,
     } = request.body;
     switch (request.method) {
       //Login a User
