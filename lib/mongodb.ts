@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
+import type { MongoClient } from "mongodb";
 
+declare global {
+  namespace globalThis {
+    var mongoose: { conn: any; promise: any };
+  }
+}
 /**
  * Global is used here to maintain a cached connection across hot reloads
  * in development. This prevents connections growing exponentially
